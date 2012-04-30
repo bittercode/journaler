@@ -1,7 +1,15 @@
 import os
 
-for root, dirs, files in os.walk('/mnt/f002/jr'):
-    for f in files:
-        if f[-3:] == 'txt':
-            fulp = os.path.join(root,f)
-            print fulp
+class FileReader(object):
+
+    def __init__(self):
+        self.topdir="/mnt/f002/jr/journals"
+
+    def find_text(self,topdir):
+        file_list = []
+        for root, dirs, files in os.walk(topdir):
+            for f in files:
+                if f[-3:] == 'txt':
+                    fulp = os.path.join(root,f)
+                    file_list.append(fulp)
+        return file_list
