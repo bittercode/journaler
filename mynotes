@@ -1,0 +1,12 @@
+Here is the flow:
+
+Look for txt files that have not been processed.
+
+With each txt file:
+	Find the corresponding spreadsheet to determine the reference number.
+	Add the reference number to the txt file
+	Add the reference number to the spreadsheet
+	Convert the text file to a pdf
+	Remove the original txt file
+
+I think that's it. I'm worried about concurrency with the users. I hate working with files.
