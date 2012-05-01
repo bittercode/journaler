@@ -16,7 +16,7 @@ class SpreadSheet(object):
             ccell = sh.cell_value(i,6)
             i += 1
 
-        return i-1
+        return i
     
     def write_link(self,wkbook_name,cell_row):
         rb = open_workbook(wkbook_name,formatting_info=True)
