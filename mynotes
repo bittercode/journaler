@@ -1,5 +1,16 @@
 Here is the flow:
 
+Pick up pdf files in new.
+
+With each pdf:
+	Find the corresponding spreadsheet to determine the reference number.
+	Add the reference number as a link to the spreadsheet
+	Store a new pdf to proper location with watermark of ref number
+	remove the original pdf
+	
+
+Here is the old flow:
+
 Look for txt files that have not been processed.
 
 With each txt file:

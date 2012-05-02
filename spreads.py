@@ -15,17 +15,18 @@ class SpreadSheet(object):
         while ccell:
             ccell = sh.cell_value(i,6)
             i += 1
-
+        
         return i
     
-    def write_link(self,wkbook_name,cell_row):
+    def write_link(self,wkbook_name,cell_row,ref):
         rb = open_workbook(wkbook_name,formatting_info=True)
         rs = rb.sheet_by_index(0)
         wb = copy(rb)
         ws = wb.get_sheet(0)
 
-        plain = easyxf('')
-        ws.write(22,2,'jrwashere',plain)
+        style = easyxf('font: underline single')
+        
+        ws.write(cell_row,6,Formula(ref),link)
 
         ws.write(22,4,2345)
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import findfiles
-import txt2pdf
+import watermark
 import spreads
 
 def write_header(txtfile,header):
@@ -16,12 +16,12 @@ def main():
     zeroes = ["","0","00"]
     myfile = findfiles.FileReader()
     
-    for txtfile in myfile.find_text("/mnt/f002/jr"):
+    for txtfile in myfile.find_text("/mnt/f002/jr/journals/new"):
         print txtfile + '\n'
-        t_month = str(txtfile[35:37])
-        t_company = txtfile[40:43]
-        t_year = txtfile[43:45]
-        if t_company == "Con":
+        t_month = txtfile[:2]
+        t_company = txtfile[4:7]
+        t_year = txtfile[2:4]
+        if t_company.upper() == "CON":
             comp = ["N","CO"]
         else:
             comp = ["E","EE"]
@@ -42,9 +42,7 @@ def main():
         #Finish up with the actual file
         
         
-        #pdfout = txtfile[:-3] + "pdf"
-        #pdfconvert = txt2pdf.Txt2Pdf()
-        #pdfconvert.txtconvert(txtfile,pdfout)
+        
         
 if __name__ == '__main__':
     main()
